@@ -1,0 +1,45 @@
+Syed Ali Hasan - syedhasa@buffalo.edu - 50087197
+Mark Abidargham - markabid@buffalo.edu - 50081616
+Ahmad Temoor - ahmadtem@buffalo.edu - 50068455
+
+
+Data Structures Used
+---------------------
+Given the input string, virtualmem.c parses and stores the string as a array of ints namely reference_string[].
+
+The data structure used to keep track of currently stored pages in memory is a array of ints namely frame[]. The 
+size of frames[] is set to the arguments passed in by the -f flag. If no argument is passed, the default number 
+of frames will be 5.
+
+Most of the page replacement policy algorithms implemented simple array of ints. Nevertheless, some policies 
+required special data structures:
+
+LRU-STACK: The data structure implemented is called *lru_replacement_stack which is fundamentally a array of ints, 
+but works as a stack by calling some helper methods namely; lru_stack_alter(int) which takes an int as an argument
+and also returns an int value; existing_current_alter(int) which also takes an int as an argument but returns void.
+
+LRU-REF8: The reference-byte is represented as a struct containing 8 int values, each representing 1 bit. This 
+struct is initialized for each number in the reference string and all of these structs are collectively stored in
+an array called byte_array[].
+
+
+Design Critique 
+----------------------
+A major design choice made was to prefer readability over efficiency; most of the algorithms implemented in the 
+methods used for the various replacement policies are straight-forward brute force algorithms. A disadvantage of 
+this approach is potential loss in performance as there might exist more efficient algorithms that can be used to 
+perform the same task more efficiently.
+
+Nevertheless, implementing such highly efficient algorithm would require some complicated procedure that can make 
+the code difficult to understand and even more difficult to debug.
+
+Another design choice made by the group to increase readability was to prefer declaring more functions rather than 
+fewer. An added benefit of this approach is added flexiblity in while coding.
+
+
+Citations
+----------------------
+- Advanced Programming in the UNIX Environment, 2nd Edition by W. Richard Stevens, Stephen A. Rago
+- C Programming Language, 2nd Edition 2nd Edition by Brian W. Kernighan, Dennis M. Ritchie
+- Operating System Concepts, 9th Edition by Abraham Silberschatz
+- Lecture Slides / Notes
